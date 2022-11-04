@@ -1,0 +1,43 @@
+version: "3.7"
+services:
+  app:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/usr/src/irrmon
+    depends_on:
+      - prometheus
+
+  lighttpd:
+    build:
+      context: .
+      dockerfile: Dockerfile_lighttpd
+    volumes:
+      - ./data/html:/var/www 
+    ports:
+      - "80:80"
+
+  prometheus:
+    image: prom/prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./data/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+
+  grafana:
+    hostname: grafana
+    image: grafana/grafana
+    ports:
+      - "3000:3000"
+        #user: "472:0"
+    volumes:
+      - grafana-storage:/var/lib/grafana
+    environment:
+      - "GF_INSTALL_PLUGINS=grafana-clock-panel,grafana-simple-json-datasource"
+      - "GF_SECURITY_ADMIN_USER=admin"
+      - "GF_SECURITY_ADMIN_PASSWORD=irrmonAFANA"
+
+volumes:
+  grafana-storage:
+

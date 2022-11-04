@@ -1,0 +1,3 @@
+prometheus-client
+gql[all]
+logutils

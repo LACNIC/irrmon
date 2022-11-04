@@ -1,0 +1,130 @@
+{
+  "source": {
+    "AFRINIC": {
+      "status": "rir",
+      "style": "irrd",
+      "whois": "whois.afrinic.net",
+      "mirrored": "none" 
+    },
+    "ALTDB": {
+      "status": "up",
+      "style": "irrd",
+      "whois": "whois.altdb.net",
+      "mirrored": "none" 
+    },
+    "AOLTW": {
+      "status": "up",
+      "style": "irrd",
+      "whois": "whois.aoltw.net",
+      "mirrored": "none" 
+    },
+    "APNIC": {
+      "status": "rir",
+      "style": "irrd",
+      "whois": "whois.apnic.net",
+      "mirrored": "none" 
+    },
+    "ARIN": {
+      "status": "rir",
+      "style": "irrd",
+      "whois": "rr.arin.net",
+      "mirrored": "none" 
+    },
+    "BELL": {
+      "status": "up",
+      "style": "irrd",
+      "whois": "whois.in.bell.ca",
+      "mirrored": "none" 
+    },
+    "BBOI": {
+      "status": "up",
+      "style": "irrd",
+      "whois": "irr.bboi.net",
+      "mirrored": "none" 
+    },
+    "CANARIE": {
+      "status": "up",
+      "style": "irrd",
+      "whois": "whois.canarie.ca",
+      "mirrored": "none" 
+    },
+    "EPOCH": {
+      "status": "up",
+      "style": "irrd",
+      "whois": "whois.epoch.net",
+      "mirrored": "none" 
+    },
+    "IDNIC": {
+      "status": "up",
+      "style": "irrd",
+      "whois": "irr.idnic.net",
+      "mirrored": "none" 
+    },
+    "JPIRR": {
+      "status": "up",
+      "style": "irrd",
+      "whois": "jpirr.nic.ad.jp",
+      "mirrored": "none" 
+    },
+    "LACNIC": {
+      "status": "rir",
+      "style": "irrd",
+      "whois": "irr.lacnic.net",
+      "mirrored": "none" 
+    },
+    "LEVEL3": {
+      "status": "up",
+      "style": "ripe",
+      "whois": "rr.level3.net",
+      "mirrored": "none" 
+    },
+    "NESTEGG": {
+      "status": "up",
+      "style": "irrd",
+      "whois": "whois.nestegg.net",
+      "mirrored": "none" 
+    },
+    "NTT": {
+      "status": "up",
+      "style": "irrd",
+      "whois": "rr.ntt.net",
+      "mirrored": "none" 
+    },
+    "PANIX": {
+      "status": "up",
+      "style": "irrd",
+      "whois": "rrdb.access.net",
+      "mirrored": "none" 
+    },
+    "RADB": {
+      "status": "up",
+      "style": "irrd",
+      "whois": "whois.radb.net",
+      "mirrored": "none" 
+    },
+    "REACH": {
+      "status": "up",
+      "style": "irrd",
+      "whois": "rr.telstraglobal.net",
+      "mirrored": "none" 
+    },
+    "RIPE": {
+      "status": "rir",
+      "style": "ripe",
+      "whois": "whois.ripe.net",
+      "mirrored": "none" 
+    },
+    "ROGERS": {
+      "status": "up",
+      "style": "irrd",
+      "whois": "whois.rogerstelecom.net",
+      "mirrored": "none" 
+    },
+    "TC": {
+      "status": "up",
+      "style": "irrd",
+      "whois": "whois.bgp.net.br",
+      "mirrored": "none" 
+    }
+  }
+}
