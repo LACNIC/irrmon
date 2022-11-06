@@ -4,7 +4,7 @@
 
 IRRMON es un proyecto para monitorear el tiempo de propagación de un objeto IRR desde que es creado o modificado en alguno de los RIRs  (AFRINIC, APNIC, ARIN, LACNIC y RIPE) y es encontrado en un mirror. 
 
-La aplicación consiste de un docker que corre cuatro contenedores que cumplen diferentes funciones a saber:
+La aplicación consiste de un conjunto de contenedores docker que cumplen las siguientes funciones:
 
 - Un proceso App que realiza las consultas del objeto a monitorear utilizando whois sobre cada mirror a consultar.  Esta App genera logs del estado de las consultas y métricas que exporta mediante un cliente Prometheus.
 - Un formulario web donde se ingresa el tipo de objeto a monitorear, se seleccionan los mirrors a consultar y otros parámetros como son el intervalo de tiempo entre consultas y el tiempo de espera de respuesta del mirror. 
@@ -49,7 +49,7 @@ Utilizando un Navegador, ingresar al url http://localhost y se obtiene un formul
 
 #### Prometheus
 
-Para verificar la salida de la métrica del exportador Prometheus nos conectamos al puerto 8000 del localhost
+Para verificar la salida de la métrica del exportador Prometheus nos conectamos al puerto 8000 del localhost: http://localhost:8000
 
 ```
 curl http://localhost:8000
@@ -109,7 +109,7 @@ Y finalmente click el boton ***Save & Test*** para confirmar la fuente de datos.
 
 ![](./images/grafana-ss3.png)
 
-Ahora es necesario importar el dashboard que se encuentra en el archivo IRR_Query.json. Para esto es necesario ingresar a  http://localhost:3000/dashboard/import y selecionar ***Upload Json File***. y al final de la página seleccionar ***Prometheus*** como fuente de datos.
+Ahora es necesario ***importar*** el dashboard que se encuentra en el archivo IRR_Query.json. Para esto es necesario ingresar a  http://localhost:3000/dashboard/import , ir a ***Dashboards*** y selecionar ***Upload Json File***. Luego selecionar en el directorio del repositorio local el dashboard contenido en el archivo ***IRRMON_Query.json*** y al final de la página seleccionar ***Prometheus*** como fuente de datos.
 
 ![](./images/grafana-ss4.png)
 
