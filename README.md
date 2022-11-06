@@ -13,13 +13,13 @@ La aplicación consiste de un conjunto de contenedores docker que cumplen las si
 
 #### Docker
 
-Luego de clonar este repositorio contruimos primero los contenedores docker   
+Luego de clonar este repositorio contruimos primero los contenedores docker:
 
 ```
 docker-compose build
 ```
 
-y para correrlo ejecutamos
+y para correrlo ejecutamos:
 
 ```
 docker-compose up -d
@@ -34,6 +34,7 @@ Creating irrmon_app_1        ... done
 Luego verificamos que los 4 contenedores se están ejecutando:
 
 ```
+docker ps
 CONTAINER ID   IMAGE             COMMAND                  CREATED         STATUS         PORTS                                       NAMES
 f53668fbbd69   irrmon_app        "python3 ./irrmon.py"    9 seconds ago   Up 8 seconds   0.0.0.0:8000->8000/tcp, :::8000->8000/tcp   irrmon_app_1
 de0219cf08b3   irrmon_lighttpd   "/usr/sbin/lighttpd …"   9 seconds ago   Up 8 seconds   0.0.0.0:80->80/tcp, :::80->80/tcp           irrmon_lighttpd_1
