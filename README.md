@@ -1,4 +1,4 @@
-### IRRMON: IRR Object Monitoring
+## IRRMON: IRR Object Monitoring
 
 ------
 
@@ -11,7 +11,11 @@ La aplicación consiste de un conjunto de contenedores docker que cumplen las si
 - Un servidor Prometheus que extrae los datos del exportador.
 - Un dashboard para Grafana que genera gráficos utilizando Prometheus como fuente de datos
 
-#### Docker
+A continuación vemos el paso a paso para correr el poryecto.
+
+------
+
+### Docker
 
 Luego de clonar este repositorio contruimos primero los contenedores docker:
 
@@ -42,13 +46,17 @@ de0219cf08b3   irrmon_lighttpd   "/usr/sbin/lighttpd …"   9 seconds ago   Up 8
 5735229a0080   prom/prometheus   "/bin/prometheus --c…"   9 seconds ago   Up 8 seconds   0.0.0.0:9090->9090/tcp, :::9090->9090/tcp   irrmon_prometheus_1
 ```
 
-#### Objeto a monitorear
+------
+
+### Objeto a monitorear
 
 Utilizando un Navegador, ingresar al url http://localhost y se obtiene un formulario web donde se definen los parámetros de la consulta a realizar.
 
 ![](./images/webform.png)
 
-#### Prometheus
+------
+
+### Prometheus
 
 Para verificar la salida de la métrica del exportador Prometheus nos conectamos al puerto 8000 del localhost: http://localhost:8000
 
@@ -90,7 +98,9 @@ irr_number_of_queries_cycles_total 44.0
 irr_number_of_queries_cycles_created 1.6675028112463198e+09
 ```
 
-#### Graphana		
+------
+
+### Graphana		
 
 Para ingresar a la plataforma de visualización de monitoreo del objeto que ofrece graphana, nos conectamos al puerto 3000 del localhost y obtenemos el dashboard predeterminado
 
@@ -122,9 +132,9 @@ Finalmente podemos ver el objeto a monitorear y las gráficas del RIR fuente, de
 
 > **Importante:** para ingresar a grafana utilizar usuario y palabra clave definida en el archivo docker-composer.yml
 
+------
 
-
-#### Ansible
+### Ansible
 
 Para automatizar el proceso de instalación del contenedor docker de forma remota en una maquina virtual se dispone del playbook para correr en ansible. Los pasos para esto son:
 
