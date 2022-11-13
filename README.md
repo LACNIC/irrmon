@@ -205,7 +205,6 @@ Para automatizar el proceso de instalación del contenedor docker de forma remot
 
   Esto nos indica que los 4 contenedores se encuentran corriendo y ahora podemos volver al punto 
 
-  [Objeto a monitorear](###Objeto a monitorear)
+  ***Objeto a monitorear***
 
   
-
