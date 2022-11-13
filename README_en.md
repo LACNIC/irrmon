@@ -1,31 +1,29 @@
-
-
 ## IRRMON: IRR Object Monitoring
 
 ------
 
-IRRMON es un proyecto para monitorear el tiempo de propagación de un objeto IRR desde que es creado o modificado en alguno de los RIRs  (AFRINIC, APNIC, ARIN, LACNIC y RIPE) y es encontrado en un mirror. 
+IRRMON is a project to monitor the propagation time of an IRR object since it is created or modified in one of the RIRs (AFRINIC, APNIC, ARIN, LACNIC and RIPE) and is found in a mirror.
 
-La aplicación consiste de un conjunto de contenedores docker que cumplen las siguientes funciones:
+The application consists of a set of docker containers that fulfill the following functions:
 
-- Un proceso App que realiza las consultas del objeto a monitorear utilizando whois sobre cada mirror a consultar.  Esta App genera logs del estado de las consultas y métricas que exporta mediante un cliente Prometheus.
-- Un formulario web donde se ingresa el tipo de objeto a monitorear, se seleccionan los mirrors a consultar y otros parámetros como son el intervalo de tiempo entre consultas y el tiempo de espera de respuesta del mirror. 
-- Un servidor Prometheus que extrae los datos del exportador.
-- Un dashboard para Grafana que genera gráficos utilizando Prometheus como fuente de datos
+- An App process that queries the object to be monitored using whois on each mirror to query. This App generates query status logs and metrics that it exports through a Prometheus client.
+- A web form where the type of object to be monitored is entered, the mirrors to be queried are selected and other parameters such as the time interval between queries and the response time from the mirror.
+- A Prometheus server that extracts the data from the exporter.
+- A dashboard for Grafana that generates graphs using Prometheus as data source
 
-A continuación vemos el paso a paso para correr el poryecto.
+Next we see the step by step to run the project.
 
 ------
 
 ### Docker
 
-Luego de clonar este repositorio contruimos primero los contenedores docker:
+After cloning this repository we first build the docker containers:
 
 ```
 docker-compose build
 ```
 
-y para correrlo ejecutamos:
+and to run it we execute:
 
 ```
 docker-compose up -d
@@ -37,7 +35,7 @@ Creating irrmon_grafana_1    ... done
 Creating irrmon_app_1        ... done
 ```
 
-Luego verificamos que los 4 contenedores se están ejecutando:
+Then we verify that all 4 containers are running:
 
 ```
 docker ps
@@ -50,9 +48,9 @@ de0219cf08b3   irrmon_lighttpd   "/usr/sbin/lighttpd …"   9 seconds ago   Up 8
 
 ------
 
-### Objeto a monitorear
+### Object to monitor
 
-Utilizando un Navegador, ingresar al url http://localhost y se obtiene un formulario web donde se definen los parámetros de la consulta a realizar.
+Using a browser, enter the url http://localhost and a web form is obtained where the parameters of the query to be performed are defined.
 
 ![](./images/webform.png)
 
@@ -60,7 +58,7 @@ Utilizando un Navegador, ingresar al url http://localhost y se obtiene un formul
 
 ### Prometheus
 
-Para verificar la salida de la métrica del exportador Prometheus nos conectamos al puerto 8000 del localhost: http://localhost:8000
+To verify the output of the metric from the Prometheus exporter, we connect to port 8000 of the localhost: http://localhost:8000
 
 ```
 curl http://localhost:8000
@@ -104,41 +102,41 @@ irr_number_of_queries_cycles_created 1.6675028112463198e+09
 
 ### Graphana		
 
-Para ingresar a la plataforma de visualización de monitoreo del objeto que ofrece graphana, nos conectamos al puerto 3000 del localhost y obtenemos el dashboard predeterminado
+To access the object monitoring visualization platform offered by graphana, we connect to port 3000 of the localhost and obtain the default dashboard
 
 ![](./images/grafana-ss0.png)
 
-Luego, selecccione **Prometheus** como data source:
+Next, select **Prometheus** as the data source:
 
 ![](./images/grafana-ss1.png)
 
-Ingresar en el campo URL el servicio prometheus dockerizado: ***http://prometheus:9090*** 
+ Enter the dockerized prometheus service in the URL field: ***http://prometheus:9090***
 
 ![](./images/grafana-ss2.png)
 
-Y finalmente click el boton ***Save & Test*** para confirmar la fuente de datos.
+And finally click the ***Save & Test*** button to confirm the data source.
 
 ![](./images/grafana-ss3.png)
 
-Ahora es necesario ***importar*** el dashboard que se encuentra en el archivo IRR_Query.json. Para esto es necesario ingresar a  http://localhost:3000/dashboard/import , ir a ***Dashboards*** y selecionar ***Upload Json File***. Luego selecionar en el directorio del repositorio local el dashboard contenido en el archivo ***IRRMON_Query.json*** y al final de la página seleccionar ***Prometheus*** como fuente de datos.
+Now we need to ***import*** the dashboard found in the IRR_Query.json file. For this it is necessary to enter http://localhost:3000/dashboard/import , go to ***Dashboards*** and select ***Upload Json File***. Then select the dashboard contained in the ***IRRMON_Query.json*** file in the local repository directory and at the bottom of the page select ***Prometheus*** as data source.
 
 ![](./images/grafana-ss4.png)
 
-Finalmente podemos ver el objeto a monitorear y las gráficas del RIR fuente, de mirrors especificos a seguir y del estado de las respuestas  del resto de los mirrors consultados. 
+Finally we can see the object to monitor and the graphs of the source RIR, of specific mirrors to follow and of the status of the responses of the rest of the consulted mirrors.
 
 ![](./images/grafana.png)
 
 
 
-> **Importante:** para ingresar a grafana utilizar usuario y palabra clave definida en el archivo docker-composer.yml
+> **Important:** to enter grafana use user and password defined in the docker-composer.yml file
 
 ------
 
 ### Ansible
 
-Para automatizar el proceso de instalación del contenedor docker de forma remota en una maquina virtual se dispone del playbook para correr en ansible. Los pasos para esto son:
+To automate the installation process of the docker container remotely in a virtual machine, the playbook is available to run in ansible. The steps for this are:
 
-- Verificar la versión de ansible instalada en la máquina de control es  >= 2.9.20. 
+- Verify the version of ansible installed on the control machine is >= 2.9.20.
 
   ```
   ansible --version
@@ -153,7 +151,7 @@ Para automatizar el proceso de instalación del contenedor docker de forma remot
     libyaml = True
   ```
 
-  Si es necesario actualizar ansible puede usar como referencia la página  https://launchpad.net/~ansible/+archive/ubuntu/ansible
+  If you need to update ansible you can reference the page https://launchpad.net/~ansible/+archive/ubuntu/ansible
 
   ```
   sudo add-apt-repository ppa:ansible/ansible
@@ -161,32 +159,32 @@ Para automatizar el proceso de instalación del contenedor docker de forma remot
   sudo apt upgrade
   ```
 
-  Por último es necesario instalar la última versión de la colección community.docker
+  Finally it is necessary to install the latest version of the community.docker collection
 
-  ```c
+  ```
   ansible-galaxy collection install community.docker
   ```
 
-- Cambiar al directorio donde se encuentran los playbooks de ansible
+- Change to the directory where the ansible playbooks are located
 
   ```
   cd ansible/playbooks
   ```
 
-- En el archivo ***hosts*** cambiar las variables de ansible necesarias para la conexión a la máquina virtual remota
+- In the ***hosts*** file change the ansible variables needed to connect to the remote virtual machine
 
   ```
   cat hosts
   remote ansible_ssh_host=remote.example.net ansible_python_interpreter='/usr/bin/python3'
   ```
 
-- Ejecutar el playbook para la 
+- Run the playbook for the remote deployment of the application
 
   ```
   ansible-playbook -i hosts irrmon.yml
   ```
 
-- Si el deployment sucede correctamente, la última tarea ejecutada por el comando ansible-playbook devuelve:
+- If the deployment succeeds, the last task executed by the ansible-playbook command returns:
 
   ```
   TASK [debug] *****************************************************************************************************************
@@ -201,8 +199,8 @@ Para automatizar el proceso de instalación del contenedor docker de forma remot
   }
   ```
 
-  Esto nos indica que los 4 contenedores se encuentran corriendo y ahora podemos volver al punto 
+  This tells us that all 4 containers are running and now we can get back to the point 
 
-  ***Objeto a monitorear***
+  ***Object to monitor***
 
   
