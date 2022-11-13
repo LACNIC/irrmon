@@ -1,0 +1,22 @@
+---
+#
+# irrom.yml
+#
+- name: Install irrmon on VM
+  hosts: nodo 
+  become_user: root 
+  become_method: sudo
+
+  tasks:
+
+  - include_tasks: debian-docker-install.yml
+    when: ansible_os_family == "Debian"
+  
+  - include_tasks: debian-docker-user.yml
+    when: ansible_os_family == "Debian"
+  
+  - include_tasks: files-copy.yml
+
+  - include_tasks: docker-irrmon.yml
+
+

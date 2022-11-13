@@ -1,0 +1,25 @@
+---
+#
+# docker-irrmon.yml
+#
+
+  - name: Remove Container if it exist
+    community.docker.docker_compose:
+      project_src: irrmon
+      state: absent
+
+  - name: Create and start services
+    community.docker.docker_compose:
+      project_src: irrmon
+    register: output
+
+  - ansible.builtin.debug:
+      var: output
+
+  - name: Show docker containers process
+    shell: docker ps
+    register: result
+
+  - debug:
+      var: result.stdout_lines 
+

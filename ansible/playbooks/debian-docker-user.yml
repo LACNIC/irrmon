@@ -1,0 +1,20 @@
+---
+# 
+# debian-docker-user.yml
+#
+
+  - name: Get the username is running the deploy
+    command: whoami
+    register: username_on_the_host
+
+  - debug:
+      var: username_on_the_host.stdout
+
+  - name: Add User to docker group 
+    shell: usermod -aG docker {{ username_on_the_host.stdout }} 
+    become: yes
+
+  - name: Reload Docker Service to refresh changes  
+    shell: systemctl reload docker.service
+    become: yes
+

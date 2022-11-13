@@ -1,0 +1,26 @@
+---
+# 
+# debian-docker-user.yml
+#
+
+  - name: Create irrmon directory to remote machine 
+    ansible.builtin.file:
+      path: ./irrmon 
+      state: directory
+      mode: '0775' 
+
+  - name: Copy data directory to remote machine 
+    ansible.builtin.copy:
+      src: ../../../irrmon/data 
+      dest: ./irrmon
+
+  - name: Copy files to remote machine 
+    copy: src=../../../irrmon/{{ item }} dest=./irrmon/
+    with_items:
+      - irrmon.py
+      - docker-compose.yml  
+      - Dockerfile           
+      - Dockerfile_lighttpd
+      - lighttpd.conf
+      - requirements.txt 
+      - IRRMON_Query.json

@@ -1,3 +1,5 @@
+
+
 ## IRRMON: IRR Object Monitoring
 
 ------
@@ -138,5 +140,72 @@ Finalmente podemos ver el objeto a monitorear y las gráficas del RIR fuente, de
 
 Para automatizar el proceso de instalación del contenedor docker de forma remota en una maquina virtual se dispone del playbook para correr en ansible. Los pasos para esto son:
 
-***En construcción!!!!!!***
+- Verificar la versión de ansible instalada en la máquina de control es  >= 2.9.20. 
+
+  ```
+  ansible --version
+  ansible [core 2.12.10]
+    config file = /etc/ansible/ansible.cfg
+    configured module search path = ['/home/santiago/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+    ansible python module location = /usr/lib/python3/dist-packages/ansible
+    ansible collection location = /home/santiago/.ansible/collections:/usr/share/ansible/collections
+    executable location = /usr/bin/ansible
+    python version = 3.8.10 (default, Jun 22 2022, 20:18:18) [GCC 9.4.0]
+    jinja version = 2.10.1
+    libyaml = True
+  ```
+
+  Si es necesario actualizar ansible puede usar como referencia la página  https://launchpad.net/~ansible/+archive/ubuntu/ansible
+
+  ```
+  sudo add-apt-repository ppa:ansible/ansible
+  sudo apt update
+  sudo apt upgrade
+  ```
+
+  Por último es necesario instalar la última versión de la colección community.docker
+
+  ```c
+  ansible-galaxy collection install community.docker
+  ```
+
+- Cambiar al directorio donde se encuentran los playbooks de ansible
+
+  ```
+  cd ansible/playbooks
+  ```
+
+- En el archivo ***hosts*** cambiar las variables de ansible necesarias para la conexión a la máquina virtual remota
+
+  ```
+  cat hosts
+  remote ansible_ssh_host=remote.example.net ansible_python_interpreter='/usr/bin/python3'
+  ```
+
+- Ejecutar el playbook para la 
+
+  ```
+  
+  ```
+
+- Si el deployment sucede correctamente, la última tarea ejecutada por el comando ansible-playbook devuelve:
+
+  ```
+  TASK [debug] *****************************************************************************************************************
+  ok: [nodo] => {
+      "result.stdout_lines": [
+          "CONTAINER ID   IMAGE             COMMAND                  CREATED         STATUS         PORTS                    NAMES",
+          "c697b85a932a   irrmon_app        \"python3 ./irrmon.py\"    3 seconds ago   Up 1 second    0.0.0.0:8000->8000/tcp   irrmon_app_1",
+          "249e7569e702   prom/prometheus   \"/bin/prometheus --c…\"   7 seconds ago   Up 3 seconds   0.0.0.0:9090->9090/tcp   irrmon_prometheus_1",
+          "833b398717e5   irrmon_lighttpd   \"/usr/sbin/lighttpd …\"   7 seconds ago   Up 4 seconds   0.0.0.0:80->80/tcp       irrmon_lighttpd_1",
+          "d78a0ee3a5ac   grafana/grafana   \"/run.sh\"                7 seconds ago   Up 2 seconds   0.0.0.0:3000->3000/tcp   irrmon_grafana_1"
+      ]
+  }
+  ```
+
+  Esto nos indica que los 4 contenedores se encuentran corriendo y ahora podemos volver al punto 
+
+  [Objeto a monitorear](###Objeto a monitorear)
+
+  
 

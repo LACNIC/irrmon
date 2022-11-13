@@ -1,0 +1,2 @@
+[nodo]
+remote ansible_ssh_host=remote.example.net ansible_python_interpreter='/usr/bin/python3'
