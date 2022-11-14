@@ -21,11 +21,11 @@ La aplicación presenta la siguiente estructura de directorios y archivos dentro
 ```
 data
 ├── html
-│   ├── index.php -> irrom.php
+│   ├── index.php -> irrmon.php
 │   ├── input
 │   │   ├── irr_input.json
 │   │   └── irr_whois_list.json
-│   ├── irrom.php
+│   ├── irrmn.php
 │   ├── log
 │   │   ├── irr_check.log
 │   │   └── irr_metrics.json
