@@ -213,7 +213,12 @@ if __name__ == '__main__':
     while True:
         
         irrInput = read_irr_json(irrBaseDir + '/html/input/irr_input.json')
-        
+     
+        while any([irrInput[keys] in ("", [], None, 0, False) for keys in irrInput]):
+            logging.info("Input: " + str(irrInput))
+            time.sleep(30)
+            irrInput = read_irr_json(irrBaseDir + '/html/input/irr_input.json')
+
         querySourceIRR = irrInput['querySourceIRR']
         queryObjectType = irrInput['queryObjectType']
         queryObject = irrInput['queryObject']
