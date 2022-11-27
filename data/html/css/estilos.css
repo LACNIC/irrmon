@@ -1,0 +1,306 @@
+/* table,caption,tbody,tfoot,thead,tr,th,td,ul,li,*/
+html,body,div,span,applet,object,iframe,p,blockquote,pre,a,abbr,acronym,
+address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,
+strike,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,fieldset,
+form,label,legend,article,aside,
+canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{
+  margin:0;
+  padding:0;
+  border:0;  /* border: 0 none;*/
+  outline:0;
+  font:inherit; 
+  vertical-align:baseline;
+}
+
+strong { font-weight:bold;}
+
+	html { background-color:#DCDCDC; }  
+
+	
+	body {
+		font-family:helvetica,arial,verdana, sans-serif;  /* Tahoma, sans-serif */
+		font-size:1em;
+		background-color:#FFFFFF; 
+		color:#333;
+		width:80%;
+		border:1px solid #FFFFFF;
+		border-left:1px solid #CCC;
+		border-right:1px solid #CCCCCC;
+		margin-left:auto; margin-right:auto; 
+	}
+		
+	/*	
+	h1,h2,h3,h3,h4,h5,h6 {
+		font-family:helvetica,arial,verdana, sans-serif;
+		font-weight:bold;
+		color:#5c5858;
+	}
+	*/
+	
+	p { margin:0.3em;}
+	
+	.clear { clear:both;}
+	
+	#encabprint { display:none; text-align:center;}	
+	
+	#cuerpo {padding:.5em;padding-top:0;}
+	#encab { padding-top:2.5em;padding-bottom:1em; margin-bottom:1em; border-bottom:1px solid #ccc;}
+	#barra_superior {
+		background-color:#FFF;
+		color:#6C6C6C;
+		text-align:right;
+		margin:0; border:0;
+		padding:.5em; padding-right:1em;
+		border-bottom:1px solid #CDCDCD;
+		/*  position:fixed;  */
+	}
+	
+	.titppal { color:#7C7676;font-size:2.5em;font-variant:small-caps;display:inline;}
+	.titppal1 { color:#7C7676;font-size:2em;font-variant:small-caps;display:inline;}
+	
+
+	#barra_superior a {
+		font-family:arial,verdana,helvetica,sans-serif;
+		font-size:1em;
+		color:#6C6C6C;
+		font-weight:normal;
+	}
+
+	
+
+	a:link { text-decoration:none;color:#0560c1;}
+	a:visited { text-decoration:none;}
+	a:active { text-decoration:underline;}
+	a:hover  { text-decoration:underline;}
+	a:focus { text-decoration:underline;}
+	
+	
+	#barra_superior a:link {text-decoration:none;}
+	#barra_superior a:visited {text-decoration:none;}
+	#barra_superior a:active {color:#ff9900;text-decoration:none;}
+	#barra_superior a:hover {color:#ffcc00;text-decoration:underline;}
+
+
+	#camino { list-style-type:none;font-size:1em;color:#565555;margin:0;margin-bottom:1em;padding-left:0;	}
+	#camino li { display:inline; }
+	#camino li:before {content:' | ';}     /* after y :before*/
+	#camino li#primero:before {content:'';}  	/* The ’:before’ and ’:after’ pseudo-elements can be used to insert generated content before or after an element’s content.*/
+	#camino li a, li a:active { color:#565555; }
+	#camino li a:hover { color:#6666FF; }
+		
+	
+	
+	.menu {
+			padding:1em;margin:1em 0 0;background-color:#e9e8e8;
+	}	
+		
+		.color { background-color:#9999FF; }
+	
+	.div_ini {
+		border:1px solid #cdcdcd;padding:.7em;margin-top:2em;
+	}
+		
+	.div_ini h3 {  color:#ab004c; }
+			
+		#pie { 
+			clear:both;
+			background-color:#5a5858; color:#ffffff; text-align:center;
+			padding-top:3em; padding-bottom:2em;
+			margin-top:2em;
+			font-size: .9em;
+		}
+		#pie a { color:#ffffff;}
+
+
+		
+		
+		.txt1 { color:#6AAEC4; font-family: arial,verdana,helvetica,sans-serif;}
+		
+
+		
+		hr { 
+			border:0;margin:0;padding:0;
+			border-bottom:1px solid #6AAEC4; 
+			margin-top:0.7em; margin-bottom:1em; 
+			width:95%;
+		}
+		
+
+		
+
+		form span {
+			color:#6AAEC4;
+			font-family: arial,verdana,helvetica,sans-serif;
+		}	
+
+
+
+	.cons_opcion {
+		margin:0; 
+		padding: 1em 0;
+		margin-top: .5em;
+		position: relative;
+		border: 1px solid #ccc;
+	}
+	
+	.cons_opcion span { color:#5c5858; font-weight:bold; padding-left:0.85em;}
+	
+	.cons_opcion  form {
+		margin:0; padding:0; position:relative;  
+	}
+	
+	.cons_opcion  fieldset {
+		width:90%;margin:0; padding:0; padding-left:0.5em; position:relative;
+	}
+
+	.cons_opcion legend {	color: #6a6d71;     font-weight: bold;}
+		
+	.cons_opcion label {
+		display:inline;
+		font-size:0.9em;
+		color:#005571;
+		margin:0;
+	}
+	
+	.cons_opcion  input, .cons_opcion select  { 
+		color:#333;
+		background-color:#FFF;
+		background-color:#FFF;
+		border:1px solid #cdcdcd;
+	}
+	
+	
+	.cons_opcion input[type=text]    { 
+		width:10%;  
+	}
+
+	.cons_opcion input[type=submit]  { 
+		border: 2px solid #4b97f5;
+		font-size: 0.9em;
+		padding: .5em;
+		margin-left: .5em;	
+	}
+	
+	.cons_opcion input:focus, .cons_opcion select:hover  { outline:1px #cccccc solid; background:#ffffff;}
+	
+	.cons_opcion input[type=submit]:hover { 
+			background-color:#eeeeee;color:#6AAEC4;
+
+		}
+	.cons_tabla {
+		color:#333;
+		background:#FFF;
+		border:0;
+		font-size:12px;
+		border-collapse: separate;
+		border-spacing: 15px;
+		background-color:#f2f2f2; 
+		margin-top:1em;
+		padding:0;
+		border-spacing:0;
+		border-collapse:collapse;	
+	}
+	
+	.cons_tabla th {
+		padding:0.5em;
+		margin:2.0em;
+		
+		color:#ab004c; 
+		background-color:#FFFFF;
+		border-collapse: separate;
+		border-spacing: 15px;
+		font-family:Verdana, Arial, Helvetica, sans-serif;
+		font-weight:bold;
+		vertical-align:middle;
+		text-align:left;
+		border:0;
+		border-bottom: 1px #ab004c solid;
+	}
+		
+	.cons_tabla td  {
+
+		line-height:1.2em;
+		padding:1.0em;
+		padding-top:0.4em;
+		margin:2.0em;
+		background:#ffffff;
+		vertical-align:top;   
+		text-align:left;
+		border:0;
+		border-bottom: 1px #f2f2f2 solid;  
+	}
+	
+	
+	td.cons_txt { font-weight:bold;}
+	td.cons_txt1 { font-weight:bold;text-align:right;}
+	
+	.constit { font-size:1.2em; color:#4f4f50;}
+	.constit1 { font-size:0.8em; color:#666; margin-top:0;}
+		
+	
+	
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+	
+
+/* ------------------------------------------------------- */	
+/* -------------- estilos boostrap ----------------------- */	
+
+		.nav-link {
+			padding: 1.5rem 1.2rem;
+			font-size:1.4em;
+			margin-right:.5em;
+		}
+		
+		.nav-pills .nav-link {
+			color: #fff;
+			background-color:#0a4481;  
+		}
+		
+		.nav-pills .nav-link.active {
+			color: #fff;
+			background-color: #ae0c52;
+		}
+		
+		.nav-link.disabled {
+			color: #b5bcc2;  /*#6c757d; */
+		}
+
+
+		
+		
+/* media print*/
+@media print {
+
+	/* 	estilos para impresion 		*/
+		#encabprint { display:none;}
+		
+		
+		body { 
+			font-size:14pt; 
+			font-family:"times new roman",times;
+			color:#000;
+			background-color:#FFFFFF; 	
+			width:100%;
+			border:none;
+			margin: 00mm 0mm 0mm 0mm;
+		}
+		card {
+			width: auto;
+			margin: 00mm 250mm 21mm 10mm;
+		}
+	
+		#encab { display:none;}
+		#cons_print  { display:none;}
+		#cons_opcion  { display:none;}
+		#barra_superior { display:none;}
+		#pie {  display:none;}
+		
+		
+}

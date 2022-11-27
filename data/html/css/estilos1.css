@@ -1,0 +1,194 @@
+/* table,caption,tbody,tfoot,thead,tr,th,td,ul,li,*/
+html,body,div,span,applet,object,iframe,p,blockquote,pre,a,abbr,acronym,
+address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,
+strike,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,fieldset,
+form,label,legend,article,aside,
+canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{
+  margin:0;
+  padding:0;
+  border:0;  /* border: 0 none;*/
+  outline:0;
+  font:inherit; 
+  vertical-align:baseline;
+}
+
+strong { font-weight:bold;}
+
+	html { background-color:#DCDCDC; }  
+
+	
+	body {
+		font-family:helvetica,arial,verdana, sans-serif;  /* Tahoma, sans-serif */
+		font-size:1em;
+		background-color:#FFFFFF; 
+		color:#333;
+		width:80%;
+		border:1px solid #FFFFFF;
+		border-left:1px solid #CCC;
+		border-right:1px solid #CCCCCC;
+		margin-left:auto; margin-right:auto; 
+	}
+		
+	/*	
+	h1,h2,h3,h3,h4,h5,h6 {
+		font-family:helvetica,arial,verdana, sans-serif;
+		font-weight:bold;
+		color:#5c5858;
+	}
+	*/
+	
+	p { margin:0.3em;}
+	
+	.clear { clear:both;}
+	
+	#encabprint { display:none; text-align:center;}	
+	
+	#cuerpo {padding:.5em;padding-top:0;}
+	#encab { padding-top:2.5em; }
+	#barra_superior {
+		background-color:#FFF;
+		color:#6C6C6C;
+		text-align:right;
+		margin:0; border:0;
+		padding:.5em; padding-right:1em;
+		border-bottom:1px solid #CDCDCD;
+		/*  position:fixed;  */
+	}
+	
+	.titppal { color:#7C7676;font-size:2.5em;font-variant:small-caps;display:inline;}
+	.titppal1 { color:#7C7676;font-size:2em;font-variant:small-caps;display:inline;}
+	
+
+	#barra_superior a {
+		font-family:arial,verdana,helvetica,sans-serif;
+		font-size:1em;
+		color:#6C6C6C;
+		font-weight:normal;
+	}
+
+	#barra_superior a:link {text-decoration:none;}
+	#barra_superior a:visited {text-decoration:none;}
+	#barra_superior a:active {color:#ff9900;text-decoration:none;}
+	#barra_superior a:hover {color:#ffcc00;text-decoration:underline;}
+
+
+
+		.color { background-color:#9999FF; }
+		
+		
+		#pie { 
+			clear:both;
+			background-color:#5a5858; color:#ffffff; text-align:center;
+			padding-top:3em; padding-bottom:2em;
+			margin-top:2em;
+			font-size: .9em;
+		}
+		#pie a { color:#ffffff;}
+
+		
+	.div_ini {
+		border:1px solid #cdcdcd;padding:.7em;margin-top:2em;
+	}
+	
+
+	/*  a { font-size:0.8em;}	*/
+	a:link{font-family:arial,verdana,helvetica,sans-serif;color:#ab004c;font-weight:bold;text-decoration:none;}
+	a:visited{font-family:arial,verdana,helvetica,sans-serif;color:#ab004c;font-weight:bold;text-decoration:none;}
+	a:active{font-family:arial,verdana,helvetica,sans-serif;color:#ab004c;font-weight:bold;text-decoration:none;}
+	a:hover{font-family:arial,verdana,helvetica,sans-serif;color:#ffcc00;font-weight:bold;text-decoration:underline;}
+
+
+		
+		.txt1 { color:#6AAEC4; font-family: arial,verdana,helvetica,sans-serif;}
+		
+
+		
+		hr { 
+			border:0;margin:0;padding:0;
+			border-bottom:1px solid #6AAEC4; 
+			margin-top:0.7em; margin-bottom:1em; 
+			width:95%;
+		}
+		
+
+		
+
+		form span {
+			color:#6AAEC4;
+			font-family: arial,verdana,helvetica,sans-serif;
+		}	
+
+
+	.cons_tabla {
+		color:#333;
+		background:#FFF;
+		border:0;
+		font-size:0.9em;
+		
+		background-color:#f2f2f2; 
+		margin-top:1em;
+		padding:0;
+		border-spacing:0;
+		border-collapse:collapse;	
+	}
+	
+	.cons_tabla th {
+		padding:0;
+		margin:0;
+		
+		color:#ab004c; 
+		background-color:#FFFFFF;
+		
+		font-family:Verdana, Arial, Helvetica, sans-serif;
+		font-weight:bold;
+		vertical-align:middle;
+		text-align:left;
+		border:0;
+		border-bottom: 1px #ab004c solid;
+	}
+		
+	.cons_tabla td  {
+
+		line-height:1.2em;
+		padding:0.2em;
+		padding-top:0.4em;
+		margin:0;
+		background:#ffffff;
+		vertical-align:top;   
+		border:0;
+		border-bottom: 1px #f2f2f2 solid;  
+	}
+	
+	
+	td.cons_txt { font-weight:bold;}
+	td.cons_txt1 { font-weight:bold;text-align:right;}
+	
+	.constit { font-size:1em;}
+	.constit1 { font-size:0.8em; color:#666; margin-top:0;}
+		
+		
+		
+/* media print*/
+@media print {
+
+	/* 	estilos para impresion 		*/
+			#encabprint { display:block;}
+			body { 
+				font-size:14pt; 
+				font-family:"times new roman",times;
+				color:#000;
+				background-color:#FFFFFF; 	
+				width:100%;
+				border:none;
+			}
+		
+		
+			#encab { display:none;}
+			#cons_print { display:none;}
+			#barra_superior { display:none;}
+			#pie {  display:none;}
+			
+		
+		
+}
+	

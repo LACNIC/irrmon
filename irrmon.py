@@ -206,7 +206,7 @@ if __name__ == '__main__':
     RESPONSE_IRR_QIN = prom.Gauge('irr_query_interval', 'Queries interval in seconds', ["queryInterval"])
     RESPONSE_IRR_QTO = prom.Gauge('irr_query_timeout', 'Timeout response in seconds', ["queryTimeout"])
         
-    RESPONSE_IRR_GAUGE = prom.Gauge('irr_query_object_found', 'IRR object query result: not found (0), found (1), empty response (2), timeout (3)', ["irr", "response"])
+    RESPONSE_IRR_GAUGE = prom.Gauge('irr_query_object_found', 'IRR object query result: not found (0), found (1), empty response (2), timeout (3), differences (4)', ["irr", "response"])
     RESPONSE_IRR_COUNT = prom.Counter('irr_number_of_queries_cycles', 'Number of queries cycles to all the Registries') 
    
 
