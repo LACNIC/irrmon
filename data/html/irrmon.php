@@ -122,21 +122,21 @@ $('#monitor').on('submit', function(e) {
     qInterval = $("#queryInterval").val();
 
     if (!(qInterval >= 60 && qInterval <= 3600)){
-	alert("El intervalo debe estar entre 60 y 3600");
+	alert("The interval value in seconds must be between 60 and 3600");
 	$("#queryInterval").focus();
 	$("#queryInterval").select();
 	return false;
     }
 
     if (!(qTimeOut >= 5 && qTimeOut <= 30)){
-	alert("El timeout debe estar entre 5 y 30");
+	alert("The timeout value in seconds must be between 5 and 30");
 	$("#queryTimeout").focus();
 	$("#queryTimeout").select();
 	return false;
     }
 
     if($("#queryObject").val().length < 1) {
-	alert("Debe ingresar un IRR Object Query");
+	alert("You must enter an IRR Object Quer");
 	$("#queryObject").focus();
 	$("#queryObject").select();
 	return false;
@@ -151,11 +151,11 @@ $('#monitor').on('submit', function(e) {
 	}
     });
     if (nNttRadb < 2){
-	alert("De selectar los Mirrors NTT RADB");
+	alert("You must select the NTT and RADB Mirror");
 	return false;
     }
     if (nMirr == 0){
-	alert("Debe selectar al menos un Mirror");
+	alert("You must select at least one Mirror");
 	return false;
     }
 })
