@@ -24,3 +24,4 @@
       - lighttpd.conf
       - requirements.txt 
       - IRRMON_Query.json
+      - .env
